@@ -262,6 +262,11 @@ def game():
     return render_template("game.html")
 
 
+@app.route("/arcade")
+def arcade():
+    return render_template("arcade.html")
+
+
 @app.route("/new-game")
 def new_game_page():
     session.pop("week_state", None)
