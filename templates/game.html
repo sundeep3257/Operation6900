@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% block title %}Operation 6900 | Unit Floor{% endblock %}
+{% block content %}
+<div id="toast-root"></div>
+<main class="game-shell">
+    <header class="hud">
+        <div class="hud-left">
+            <h1>Operation 6900</h1>
+            <span id="hud-day" class="hud-chip">Day 1</span>
+            <span id="hud-timer" class="hud-chip">03:00</span>
+        </div>
+        <div class="hud-center">
+            <div class="hud-stat"><span>Score</span><strong id="hud-score">0</strong></div>
+            <div class="hud-stat"><span>Treated</span><strong id="hud-treated">0</strong></div>
+            <div class="hud-stat"><span>Crashes</span><strong id="hud-crashes">0</strong></div>
+            <div class="hud-stat"><span>Mistakes</span><strong id="hud-mistakes">0</strong></div>
+        </div>
+        <div class="hud-right">
+            <button id="pause-btn" class="btn btn-ghost">Pause</button>
+            <button id="restart-btn" class="btn btn-danger">Restart Week</button>
+        </div>
+    </header>
+
+    <section class="game-grid">
+        <aside class="panel queue-panel">
+            <div class="panel-head">
+                <h2>Intake Queue</h2>
+                <span id="queue-count" class="count-chip">0 waiting</span>
+            </div>
+            <div id="queue-list" class="queue-list"></div>
+        </aside>
+
+        <section class="panel map-panel">
+            <div class="panel-head">
+                <h2>6900 Unit Map</h2>
+                <span id="day-goal" class="count-chip">Goal: survive the shift</span>
+            </div>
+
+            <div id="unit-map" class="unit-map">
+                <div class="zone intake-zone">Intake</div>
+                <div class="zone workroom-zone">Workroom Hub</div>
+                <div class="zone labs-zone">Labs / Imaging</div>
+
+                <div class="wing-label left">Colorectal Wing</div>
+                <div class="wing-label right">Urology Wing</div>
+
+                <div id="beds-layer">
+                    <div class="room bed-slot colorectal-room" data-bed-id="bed_c1" data-service="colorectal"><span>C1</span></div>
+                    <div class="room bed-slot colorectal-room" data-bed-id="bed_c2" data-service="colorectal"><span>C2</span></div>
+                    <div class="room bed-slot colorectal-room" data-bed-id="bed_c3" data-service="colorectal"><span>C3</span></div>
+                    <div class="room bed-slot colorectal-room" data-bed-id="bed_c4" data-service="colorectal"><span>C4</span></div>
+
+                    <div class="room bed-slot urology-room" data-bed-id="bed_u1" data-service="urology"><span>U1</span></div>
+                    <div class="room bed-slot urology-room" data-bed-id="bed_u2" data-service="urology"><span>U2</span></div>
+                    <div class="room bed-slot urology-room" data-bed-id="bed_u3" data-service="urology"><span>U3</span></div>
+                    <div class="room bed-slot urology-room" data-bed-id="bed_u4" data-service="urology"><span>U4</span></div>
+                </div>
+
+                <div id="characters-layer"></div>
+            </div>
+        </section>
+
+        <aside class="panel roster-panel">
+            <div class="panel-head">
+                <h2>Team Roster</h2>
+                <span class="count-chip">Click bed actions to assign</span>
+            </div>
+            <div id="roster-list" class="roster-list"></div>
+        </aside>
+    </section>
+</main>
+
+<div id="modal-root" class="modal-root hidden"></div>
+
+<script src="{{ url_for('static', filename='js/ui.js') }}"></script>
+<script src="{{ url_for('static', filename='js/game.js') }}"></script>
+{% endblock %}

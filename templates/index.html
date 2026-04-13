@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Operation 6900 | Home{% endblock %}
+{% block content %}
+<main class="landing-page">
+    <section class="hero-layout">
+        <div class="hero-float hero-float-a"></div>
+        <div class="hero-float hero-float-b"></div>
+        <div class="hero-float hero-float-c"></div>
+
+        <div class="hero-content">
+            <h1 class="hero-title">Operation 6900</h1>
+            <p class="hero-subtitle">
+                Survive one brutal week on the 6900 Unit. Assign beds, deploy your team, stabilize patients,
+                and avoid treatment disasters while the hallway chaos escalates every day.
+            </p>
+            <div class="hero-actions">
+                <a class="btn btn-primary btn-start-week" href="{{ url_for('new_game_page') }}">Start Week</a>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}
