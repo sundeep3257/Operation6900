@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Operation 6900 | Arcade Break{% endblock %}
+{% block content %}
+<main class="arcade-shell">
+    <section class="arcade-header">
+        <h1>Arcade Break</h1>
+        <p>Pick your character, choose a classic game, and survive the neon rush.</p>
+    </section>
+
+    <section class="arcade-control-panel">
+        <div class="arcade-control-group">
+            <label for="arcade-player-select">Player</label>
+            <select id="arcade-player-select"></select>
+        </div>
+        <div class="arcade-control-group">
+            <label for="arcade-game-select">Game</label>
+            <select id="arcade-game-select">
+                <option value="pacman">Pacman</option>
+                <option value="snake">Snake</option>
+                <option value="asteroids">Asteroids</option>
+            </select>
+        </div>
+        <button id="arcade-start-btn" class="btn btn-primary">Start Game</button>
+        <a class="btn btn-ghost" href="{{ url_for('game') }}">Back To 6900</a>
+    </section>
+
+    <section class="arcade-stage">
+        <canvas id="arcade-canvas" width="920" height="520" aria-label="Arcade game canvas"></canvas>
+        <div class="arcade-overlay">
+            <p id="arcade-status">Loading characters...</p>
+            <p id="arcade-hint">Use arrow keys to move. Space shoots in Asteroids.</p>
+        </div>
+    </section>
+</main>
+
+<script src="{{ url_for('static', filename='js/arcade.js') }}"></script>
+{% endblock %}
