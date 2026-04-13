@@ -819,6 +819,119 @@ h1 {
     100% { transform: translateY(0) translateX(0); }
 }
 
+.bored-btn {
+    position: fixed;
+    left: 14px;
+    bottom: 14px;
+    z-index: 18;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: #10224b;
+    background: #fff;
+    border: 1px solid #cad9f4;
+    border-radius: 999px;
+    padding: 0.35rem 0.7rem;
+    box-shadow: 0 10px 20px rgba(26, 55, 98, 0.2);
+}
+
+.bored-btn:hover {
+    transform: translateY(-1px);
+}
+
+.arcade-shell {
+    min-height: 100vh;
+    padding: 1.2rem;
+    background:
+        radial-gradient(circle at 15% 12%, rgba(255, 0, 173, 0.15), transparent 32%),
+        radial-gradient(circle at 85% 14%, rgba(0, 225, 255, 0.2), transparent 30%),
+        radial-gradient(circle at 42% 88%, rgba(110, 78, 255, 0.2), transparent 35%),
+        #080a23;
+    color: #ebf5ff;
+}
+
+.arcade-header {
+    width: min(1080px, 96vw);
+    margin: 0 auto 0.8rem;
+}
+
+.arcade-header h1 {
+    margin: 0;
+    color: #7df8ff;
+    font-size: clamp(2rem, 5vw, 3.1rem);
+    letter-spacing: 0.03em;
+}
+
+.arcade-header p {
+    margin: 0.35rem 0 0;
+    color: #bdd7ff;
+}
+
+.arcade-control-panel {
+    width: min(1080px, 96vw);
+    margin: 0 auto 1rem;
+    display: flex;
+    gap: 0.7rem;
+    align-items: end;
+    flex-wrap: wrap;
+    border: 1px solid rgba(125, 239, 255, 0.25);
+    border-radius: 14px;
+    padding: 0.8rem;
+    background: rgba(8, 14, 38, 0.74);
+}
+
+.arcade-control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    min-width: 230px;
+}
+
+.arcade-control-group label {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #81ebff;
+    font-weight: 700;
+}
+
+.arcade-control-group select {
+    border: 1px solid rgba(129, 235, 255, 0.35);
+    background: rgba(7, 18, 52, 0.95);
+    color: #eff7ff;
+    border-radius: 10px;
+    height: 38px;
+    padding: 0 0.55rem;
+    font-size: 0.92rem;
+}
+
+.arcade-stage {
+    width: min(1080px, 96vw);
+    margin: 0 auto;
+    border: 1px solid rgba(127, 255, 193, 0.3);
+    border-radius: 16px;
+    background: rgba(5, 9, 27, 0.88);
+    box-shadow: 0 24px 50px rgba(0, 0, 0, 0.4);
+    padding: 0.7rem;
+}
+
+#arcade-canvas {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+    border: 1px solid rgba(123, 166, 255, 0.4);
+    background: #050818;
+}
+
+.arcade-overlay {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 0.6rem;
+    color: #d4e9ff;
+    font-size: 0.92rem;
+}
+
 @media (max-width: 1280px) {
     .game-grid {
         grid-template-columns: 250px 1fr 270px;
@@ -837,5 +950,8 @@ h1 {
     }
     .unit-map {
         height: 540px;
+    }
+    .arcade-overlay {
+        flex-direction: column;
     }
 }
